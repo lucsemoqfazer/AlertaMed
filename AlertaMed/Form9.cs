@@ -10,45 +10,17 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AlertaMed
 {
     public partial class Form9 : Form
 
     {
-        //codigo para fonte personalizada
-        private PrivateFontCollection fontes = new PrivateFontCollection();
-        private Font fonteMontserrat;
 
         public Form9()
         {
             InitializeComponent();
-            Assembly assembly = Assembly.GetExecutingAssembly();
-
-            using (Stream stream = assembly.GetManifestResourceStream("AlertaMed.Montserrat-Arabic Regular.ttf"))
-            {
-                byte[] dados = new byte[stream.Length];
-                stream.Read(dados, 0, dados.Length);
-
-                IntPtr memoria = Marshal.AllocCoTaskMem(dados.Length);
-
-                try
-                {
-                    Marshal.Copy(dados, 0, memoria, dados.Length);
-                    fontes.AddMemoryFont(memoria, dados.Length);
-                }
-                finally
-                {
-                    Marshal.FreeCoTaskMem(memoria);
-                }
-            }
-            //botões para ficar com fonte personalizada
-            fonteMontserrat = new Font(fontes.Families[0], 12);
-
-            textBox1.Font = fonteMontserrat;
-            textBox2.Font = fonteMontserrat;
-            textBox3.Font = fonteMontserrat;
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -115,12 +87,12 @@ namespace AlertaMed
             if (textBox3.PasswordChar == '\0')
             {
                 textBox3.PasswordChar = '●';
-                button5.Image = Properties.Resources.botão_olho_riscado;
+                button6.Image = Properties.Resources.botão_olho_riscado;
             }
             else
             {
                 textBox3.PasswordChar = '\0';
-                button5.Image = Properties.Resources.botão_olho_;
+                button6.Image = Properties.Resources.botão_olho_;
             }
         }
 
@@ -147,12 +119,25 @@ namespace AlertaMed
             // Se chegou aqui, o nome é válido
             MessageBox.Show("Cadastro realizado com sucesso!");
 
-            // Coloque aqui o código para continuar para a próxima tela
+            Form7 form7 = new Form7();
+
+            form7.StartPosition = FormStartPosition.Manual;
+            form7.Location = this.Location;
+            form7.Size = this.Size;
+
+            form7.Show();
+            this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            Form2 form2 = new Form2();
+            form2.StartPosition = FormStartPosition.Manual;
+            form2.Location = this.Location;
+            form2.Size = this.Size;
 
+            form2.Show();
+            this.Close();
         }
 
         private void button2_Enter(object sender, EventArgs e)
@@ -217,6 +202,7 @@ namespace AlertaMed
             if (textBox1.Text == "Digite o Nome")
             {
                 textBox1.Clear();
+                
             }
         }
 
@@ -228,6 +214,7 @@ namespace AlertaMed
             if (textBox2.Text == "Digite o E-mail")
             {
                 textBox2.Clear();
+                
             }
         }
 
@@ -236,6 +223,7 @@ namespace AlertaMed
             if (textBox3.Text == "Digite a Senha")
             {
                 textBox3.Clear();
+                
             }
         }
     }

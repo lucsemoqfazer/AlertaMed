@@ -19,9 +19,7 @@ namespace AlertaMed
 {
     public partial class Form4 : Form
     {
-        //codigo para fonte personalizada
-        private PrivateFontCollection fontes = new PrivateFontCollection();
-        private Font fonteMontserrat;
+        
 
         //codigo para conseguir mudar o fundo do datetime 
         [DllImport("uxtheme.dll", CharSet = CharSet.Unicode)]
@@ -31,31 +29,7 @@ namespace AlertaMed
         {
             InitializeComponent();
             Assembly assembly = Assembly.GetExecutingAssembly();
-
-            using (Stream stream = assembly.GetManifestResourceStream("AlertaMed.Montserrat-Arabic Regular.ttf"))
-            {
-                byte[] dados = new byte[stream.Length];
-                stream.Read(dados, 0, dados.Length);
-
-                IntPtr memoria = Marshal.AllocCoTaskMem(dados.Length);
-
-                try
-                {
-                    Marshal.Copy(dados, 0, memoria, dados.Length);
-                    fontes.AddMemoryFont(memoria, dados.Length);
-                }
-                finally
-                {
-                    Marshal.FreeCoTaskMem(memoria);
-                }
-            }
-            //botões para ficar com fonte personalizada
-            fonteMontserrat = new Font(fontes.Families[0], 12);
-
-            textBox1.Font = fonteMontserrat;
-            textBox2.Font = fonteMontserrat;
-            textBox3.Font = fonteMontserrat;
-
+            
             
             button5.Image = Properties.Resources.botão_olho_;
 

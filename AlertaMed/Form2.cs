@@ -15,42 +15,10 @@ namespace AlertaMed
 {
     public partial class Form2 : Form
     {
-        private PrivateFontCollection fontes = new PrivateFontCollection();
-        private Font fonteMontserrat;
-
+        
         public Form2()
         {
             InitializeComponent();
-            Assembly assembly = Assembly.GetExecutingAssembly();
-
-            using (Stream stream = assembly.GetManifestResourceStream("AlertaMed.Montserrat-Arabic Regular.ttf"))
-            {
-                byte[] dados = new byte[stream.Length];
-                stream.Read(dados, 0, dados.Length);
-
-                IntPtr memoria = Marshal.AllocCoTaskMem(dados.Length);
-
-                try
-                {
-                    Marshal.Copy(dados, 0, memoria, dados.Length);
-                    fontes.AddMemoryFont(memoria, dados.Length);
-                }
-                finally
-                {
-                    Marshal.FreeCoTaskMem(memoria);
-                }
-            }
-
-            fonteMontserrat = new Font(fontes.Families[0], 12);
-
-            textBox1.Font = fonteMontserrat;
-            textBox2.Font = fonteMontserrat;
-            textBox3.Font = fonteMontserrat;
-            comboBox1.Font = fonteMontserrat;
-
-            button4.Image = Properties.Resources.botão_voltar_cadastro;
-            button5.Image = Properties.Resources.botão_olho_;
-            button1.Image = Properties.Resources.botão_continuar_normal;
 
         }
 

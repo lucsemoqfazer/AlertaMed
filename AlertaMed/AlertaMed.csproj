@@ -49,6 +49,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form10.Designer.cs">
+      <DependentUpon>Form10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form11.Designer.cs">
+      <DependentUpon>Form11.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +114,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form10.resx">
+      <DependentUpon>Form10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form11.resx">
+      <DependentUpon>Form11.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,7 +154,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Montserrat-Arabic Regular.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -497,6 +514,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\botao entrar selecionado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botão criar uma conta normal 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botão criar uma conta normal 21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botão entrar em uma instituição normal 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botão criar uma conta selecionado 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botão entrar em uma instituição selecionado 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tela cadastro usuario.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tela cadastro usuario botao cad. selecionado.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tela entrar usuario botao entrar selecionado.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tela entrar usuario uso pessoal.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

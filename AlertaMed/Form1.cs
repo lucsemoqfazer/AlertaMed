@@ -19,7 +19,14 @@ namespace AlertaMed
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            Form10 form10 = new Form10();
+
+            form10.StartPosition = FormStartPosition.Manual;
+            form10.Location = this.Location;
+            form10.Size = this.Size;
+
+            form10.Show();
+            this.Hide();
         }
 
         private void button1_MouseMove(object sender, MouseEventArgs e)

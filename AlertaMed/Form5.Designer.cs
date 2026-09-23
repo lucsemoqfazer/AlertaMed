@@ -63,10 +63,10 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::AlertaMed.Properties.Resources.botão_entrar_em_uma_instituição;
-            this.button1.Location = new System.Drawing.Point(447, 438);
+            this.button1.Image = global::AlertaMed.Properties.Resources.botão_entrar_em_uma_instituição_normal_2;
+            this.button1.Location = new System.Drawing.Point(421, 437);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(391, 40);
+            this.button1.Size = new System.Drawing.Size(441, 40);
             this.button1.TabIndex = 6;
             this.button1.TabStop = false;
             this.button1.UseVisualStyleBackColor = false;
@@ -82,10 +82,10 @@
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::AlertaMed.Properties.Resources.botão_criar_uma_conta_;
-            this.button4.Location = new System.Drawing.Point(447, 370);
+            this.button4.Image = global::AlertaMed.Properties.Resources.botão_criar_uma_conta_normal_21;
+            this.button4.Location = new System.Drawing.Point(421, 372);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(391, 40);
+            this.button4.Size = new System.Drawing.Size(441, 40);
             this.button4.TabIndex = 5;
             this.button4.TabStop = false;
             this.button4.UseVisualStyleBackColor = false;

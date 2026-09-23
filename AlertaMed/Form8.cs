@@ -10,45 +10,17 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AlertaMed
 {
     public partial class Form8 : Form
 
     {
-        //codigo para fonte personalizada
-        private PrivateFontCollection fontes = new PrivateFontCollection();
-        private Font fonteMontserrat;
         public Form8()
         {
             InitializeComponent();
-            Assembly assembly = Assembly.GetExecutingAssembly();
-
-            using (Stream stream = assembly.GetManifestResourceStream("AlertaMed.Montserrat-Arabic Regular.ttf"))
-            {
-                byte[] dados = new byte[stream.Length];
-                stream.Read(dados, 0, dados.Length);
-
-                IntPtr memoria = Marshal.AllocCoTaskMem(dados.Length);
-
-                try
-                {
-                    Marshal.Copy(dados, 0, memoria, dados.Length);
-                    fontes.AddMemoryFont(memoria, dados.Length);
-                }
-                finally
-                {
-                    Marshal.FreeCoTaskMem(memoria);
-                }
-            }
-            //botões para ficar com fonte personalizada
-            fonteMontserrat = new Font(fontes.Families[0], 12);
-
-            textBox1.Font = fonteMontserrat;
-            textBox2.Font = fonteMontserrat;
-            textBox3.Font = fonteMontserrat;
-            textBox4.Font = fonteMontserrat;
-            textBox5.Font = fonteMontserrat;
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -69,11 +41,39 @@ namespace AlertaMed
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.StartPosition = FormStartPosition.Manual;
-            form1.Location = this.Location;
-            form1.Size = this.Size;
-            form1.Show();
+            bool temDados = false;
+
+            if ((textBox1.Text.Trim() != "" && textBox1.Text != "Digite seu nome") ||
+                (textBox2.Text.Trim() != "" && textBox2.Text != "Digite o seu e-mail") ||
+                (textBox5.Text.Trim() != "" && textBox3.Text != "Digite sua mensagem") || 
+                (textBox3.Text.Trim() != "" && textBox3.Text != "Digite o Nome da Instituição ") ||
+                (textBox4.Text.Trim() != "" && textBox3.Text != "Digite o E-mail da Instituição") )
+
+
+            {
+                temDados = true;
+            }
+
+            if (temDados)
+            {
+                DialogResult resultado = MessageBox.Show(
+                    "Você realmente deseja voltar?\n\nOs dados preenchidos serão perdidos.",
+                    "Atenção!",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (resultado == DialogResult.No)
+                {
+                    return;
+                }
+            }
+
+            Form5 form5 = new Form5();
+            form5.StartPosition = FormStartPosition.Manual;
+            form5.Location = this.Location;
+            form5.Size = this.Size;
+            form5.Show();
             this.Hide();
 
         }
